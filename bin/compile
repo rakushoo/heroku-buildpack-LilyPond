@@ -6,6 +6,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
+PATH=$PATH:/app/.lilypond/bin
+
 mkdir -p $CACHE_DIR
 cd $CACHE_DIR
 file1="lilypond-2.18.2-1.linux-64.sh"
@@ -32,7 +34,6 @@ else
 fi
 
 echo "-----> Testing LilyPond"
-PATH=$PATH:/app/.lilypond/bin
 echo \\header{title = \"A scale in LilyPond\"} \\relative {c d e f g a b c} \\version \"2.18.2\" > blah.ly
 lilypond --png -o blahOutput blah.ly
 if [ -f $file1 ]

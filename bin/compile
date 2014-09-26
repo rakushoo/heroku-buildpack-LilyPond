@@ -14,7 +14,7 @@ then
     echo "-----> Download found"
 else
 	echo "-----> Downloading LilyPond"
-	wget http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
+	curl http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh > $file1
 	if [ -f $file1 ]
 	then
 		echo "-----> Download complete"

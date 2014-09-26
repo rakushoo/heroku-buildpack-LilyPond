@@ -28,7 +28,7 @@ if hash lilypond 2>/dev/null; then
 	echo "-----> LilyPond already installed"
 else
 	echo "-----> Installing LilyPond"
-	sh lilypond-2.18.2-1.linux-64.sh --prefix=/app --batch
+	sh lilypond-2.18.2-1.linux-64.sh --prefix=/.lilypond --batch
 fi
 
 echo "-----> Done installing LilyPond"

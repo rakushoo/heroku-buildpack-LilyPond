@@ -6,17 +6,28 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
-cd $BUILD_DIR
-echo "-----> Downloading LilyPond 2.18.2-1 Linux 64 bit binaries"
-wget http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
+cd $CACHE_DIR
 file1="lilypond-2.18.2-1.linux-64.sh"
 if [ -f $file1 ]
 then
     echo "-----> Download found"
 else
-    echo "-----> Download failed.Compilation cannot continue."
-    exit 1;
+	echo "-----> Downloading LilyPond"
+	wget http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
+	if [ -f $file1 ]
+	then
+		echo "-----> Download complete"
+	else
+	    echo "-----> Download failed. LilyPond installation cannot continue."
+	    exit 1;
+	fi
 fi
 
-sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/ --batch
-echo "-----> Compilation done"
+if hash lilypond 2>/dev/null; then
+	echo "-----> LilyPond already installed"
+else
+	echo "-----> Installing LilyPond"
+	sh lilypond-2.18.2-1.linux-64.sh --prefix=$BUILD_DIR --batch
+fi
+
+echo "-----> Done installing LilyPond"

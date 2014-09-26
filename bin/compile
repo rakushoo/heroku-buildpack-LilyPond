@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+LP_DIR=`cd $(dirname $0); cd ..; pwd`
+
+cd $BUILD_DIR
+echo "-----> Downloading LilyPond 2.18.2-1 Linux 64 bit binaries"
+wget http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
+file1="lilypond-2.18.2-1.linux-64.sh"
+if [ -f $file1 ]
+then
+    echo "-----> Download found"
+else
+    echo "-----> Download failed.Compilation cannot continue."
+    exit 1;
+fi
+
+sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/ --batch
+echo "-----> Compilation done"

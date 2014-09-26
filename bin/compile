@@ -6,7 +6,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
-PATH=$PATH:/app/.lilypond/bin
+export PATH=$PATH:/app/.lilypond/bin
 
 mkdir -p $CACHE_DIR
 cd $CACHE_DIR

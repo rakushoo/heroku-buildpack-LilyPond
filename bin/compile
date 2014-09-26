@@ -31,4 +31,16 @@ else
 	sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/.lilypond --batch
 fi
 
+echo "-----> Testing LilyPond"
+echo \\header{title = \"A scale in LilyPond\"} \\relative {c d e f g a b c} \\version \"2.18.2\" > blah.ly
+lilypond --png -o blahOutput blah.ly
+if [ -f $file1 ]
+then
+	echo "-----> Test passed"
+	rm blah.ly blahOutput.png
+else
+	echo "-----> Test failed"
+	exit 1;
+fi
+
 echo "-----> Done installing LilyPond"

@@ -1,12 +1,15 @@
 #!/bin/sh
 
-cd $1
+# cd $1
+echo $HOME
+cd $HOMEw
 curl -O http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
 
 # curl -O https://github.com/neewamp/heroku-buildpack-LilyPond/blob/master/LilyPond.tar.gz
 
-cd $1
-sh lilypond-2.18.2-1.linux-64.sh --prefix $1 --batch
+# cd $1
+echo $HOME
+sh lilypond-2.18.2-1.linux-64.sh --prefix $HOME --batch
 
 # echo "\\header{title = \"A scale in LilyPond\"} \\relative {c d e f g a b c} \\version \"2.18.2\" > blah.ly
 

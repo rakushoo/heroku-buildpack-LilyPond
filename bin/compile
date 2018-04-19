@@ -62,9 +62,16 @@ echo $1
 
 cd $1
 curl -O http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
-ls
-sh lilypond-2.18.2-1.linux-64.sh --prefix $HOME
+
+# # if [ -f $file1 ]
+# # then
+# # 	echo "-----> Test passed"
+
+
+sh lilypond-2.18.2-1.linux-64.sh --prefix $HOME/ --batch
 echo \\header{title = \"A scale in LilyPond\"} \\relative {c d e f g a b c} \\version \"2.18.2\" > blah.ly
+
+
 
 mkdir -p $1/.profile.d
 lily="$HOME/lilypond/usr/lib/python2.4"

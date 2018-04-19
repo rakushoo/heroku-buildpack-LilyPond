@@ -32,7 +32,7 @@
 # file1="lilypond-2.18.2-1.linux-64.sh"
 # if [ -f $file1 ]
 # then
-n#     echo "-----> Download found"
+#     echo "-----> Download found"
 # else
 # 	echo "-----> Downloading LilyPond"
 # 	curl http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh > /app/$file1
@@ -62,13 +62,14 @@ echo $1
 
 cd $1
 curl -O http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
-sh lilypond-2.18.2-1.linux-64.sh --prefix /app/
+ls
+sh lilypond-2.18.2-1.linux-64.sh --prefix $HOME
 echo \\header{title = \"A scale in LilyPond\"} \\relative {c d e f g a b c} \\version \"2.18.2\" > blah.ly
 
 mkdir -p $1/.profile.d
 lily="$HOME/lilypond/usr/lib/python2.4"
 echo 'PATH=$PATH:$HOME/bin:' > $1/.profile.d/LilyPond.sh
-echo 'PYTHONPATH=$PYTHONPATH:$lily:$lily/plat-linux:$lily/lib-dynload' >> $1/.profile.d/LilyPond.sh
+echo 'PYTHONPATH=$PYTHONPATH:$HOME/lilypond/usr/lib/python2.4:$HOME/lilypond/usr/lib/python2.4/plat-linux:$HOME/lilypond/usr/lib/python2.4/lib-dynload' >> $1/.profile.d/LilyPond.sh
 
 # # lilypond --png -o blahOutput blah.ly
 # # if [ -f $file1 ]

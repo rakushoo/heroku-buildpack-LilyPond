@@ -4,5 +4,5 @@
 cat <<EOF
 ---
 config_vars:
-PATH: $PATH:/app/lilypond/usr/bin:/app/bin:/usr/local/bin:/usr/bin:/bin
+	PATH: /app/lilypond/usr/bin:/app/bin:/usr/local/bin:/usr/bin:/bin
 EOF

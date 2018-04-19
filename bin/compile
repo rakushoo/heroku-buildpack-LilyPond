@@ -24,14 +24,14 @@ else
 	fi
 fi
 
-if hash lilypond 2>/dev/null; then
-	echo "-----> LilyPond already installed"
-else
-	echo "-----> Installing LilyPond"
-	sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/ --batch
-fi
+# if hash lilypond 2>/dev/null; then
+# 	echo "-----> LilyPond already installed"
+# else
+# 	echo "-----> Installing LilyPond"
+# 	sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/ --batch
+# fi
 
-echo "-----> Testing LilyPond"
+# echo "-----> Testing LilyPond"
 # echo \\header{title = \"A scale in LilyPond\"} \\relative {c d e f g a b c} \\version \"2.18.2\" > blah.ly
 # lilypond --png -o blahOutput blah.ly
 # if [ -f $file1 ]

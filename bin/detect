@@ -2,4 +2,6 @@
 # bin/detect <build-dir>
 BUILD_DIR=$1
 cd $BUILD_DIR
-ls -U *.ly > /dev/null 2>&1 && (echo "LilyPond") || exit 1
+echo "LilyPond"
+# ls -U *.ly > /dev/null 2>&1 && (echo "LilyPond") || exit 1
+exit 0

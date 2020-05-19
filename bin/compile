@@ -3,7 +3,7 @@
 
 # cd $1
 cd $1
-curl -O http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.20.0-1.linux-64.sh
+curl -O http://dlilypond.org/download/binaries/linux-64/lilypond-2.20.0-1.linux-64.sh
 
 # curl -O https://github.com/neewamp/heroku-buildpack-LilyPond/blob/master/LilyPond.tar.gz
 

@@ -2,6 +2,9 @@
 
 pwd
 echo $1
+echo $2
+echo $3
+
 
 cd $1
 curl -O http://lilypond.org/download/binaries/linux-64/lilypond-2.20.0-1.linux-64.sh

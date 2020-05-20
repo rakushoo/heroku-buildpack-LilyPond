@@ -25,17 +25,15 @@ echo 'PATH=$PATH:$HOME/lilypond/usr/bin' > $1/.profile.d/LilyPond.sh
 echo '\\header{title = "A scale in LilyPond"} \\relative {c d e f g a b c} \\version "2.20.0"' > blah.ly
 output=blahOutput.png
 PATH=$PATH:$1/lilypond/usr/bin
-echo $GUILE_LOAD_PATH
 GUILE_LOAD_PATH=lilypond/usr/share/guile/1.8
 
-
-lilypond --png -o blahOutput blah.ly
-if [ -f $output ]
-then
-    echo "-----> Test passed"
-    rm blah.ly blahOutput.png
-else
-    echo "-----> Test failed"
-    exit 1;
-fi
+# lilypondlilypond --png -o blahOutput blah.ly
+# if [ -f $output ]
+# then
+#     echo "-----> Test passed"
+#     rm blah.ly blahOutput.png
+# else
+#     echo "-----> Test failed"
+#     exit 1;
+# fi
 echo "-----> Done installing LilyPond"

@@ -8,7 +8,7 @@ curl -O http://lilypond.org/download/binaries/linux-64/lilypond-2.20.0-1.linux-6
 # curl -O https://github.com/neewamp/heroku-buildpack-LilyPond/blob/master/LilyPond.tar.gz
 
 cd $1
-sh lilypond-2.20.0-1.linux-64.sh --prefix $1--batch
+sh lilypond-2.20.0-1.linux-64.sh --prefix $1 --batch
 
 ls -lt
 

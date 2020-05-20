@@ -18,15 +18,15 @@ rm -f $file
 ### Set environment variable
 mkdir -p $1/.profile.d
 echo 'PATH=$PATH:$HOME/lilypond/usr/bin' > $1/.profile.d/LilyPond.sh
-sh $1/.profile.d/LilyPond.sh
-PATH=$PATH:$HOME/lilypond/usr/bin
-echo $PATH
 
 # echo 'PYTHONPATH=$PYTHONPATH:$HOME/lilypond/usr/lib/python2.4:$HOME/lilypond/usr/lib/python2.4/plat-linux:$HOME/lilypond/usr/lib/python2.4/lib-dynload' >> $1/.profile.d/LilyPond.sh
 
 ### Lilypond test
 echo '\\header{title = "A scale in LilyPond"} \\relative {c d e f g a b c} \\version "2.20.0"' > blah.ly
 output=blahOutput.png
+PATH=$PATH:$1/lilypond/usr/bin
+echo $PATH
+
 lilypond --png -o blahOutput blah.ly
 if [ -f $output ]
 then

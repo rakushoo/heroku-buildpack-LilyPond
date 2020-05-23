@@ -1,14 +1,8 @@
 #!/bin/sh
 
-pwd
-echo $1
-echo $2
-echo $3
-
 ### Download install file
 cd $1
-#file=lilypond-2.20.0-1.linux-64.sh
-file=lilypond-2.19.52-1.linux-64.sh
+file=lilypond-2.20.0-1.linux-64.sh
 curl -O http://lilypond.org/download/binaries/linux-64/$file
 
 ### Install file
